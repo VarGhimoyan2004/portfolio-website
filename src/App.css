@@ -1,0 +1,153 @@
+:root {
+  --primary-color-light: #2c3e50;
+  --secondary-color-light: #3498db;
+  --background-color-light: #ecf0f1;
+  --text-color-light: #97cbff;
+  --card-bg-light: #ffffff;
+
+  --primary-color-dark: #34495e;
+  --secondary-color-dark: #3498db;
+  --background-color-dark: #121212;
+  --text-color-dark: #e0e0e0;
+  --card-bg-dark: #2c2c2c;
+
+  --transition-speed: 0.3s;
+  --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--primary-color-light);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color var(--transition-speed);
+}
+
+.dark-mode header {
+  background-color: var(--primary-color-dark);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--secondary-color-light);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--secondary-color-dark);
+  transform: scale(1.05);
+}
+
+.dark-mode button {
+  background-color: var(--secondary-color-dark);
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color var(--transition-speed);
+}
+
+.dark-mode nav a {
+  color: var(--text-color-dark);
+}
+
+nav a:hover {
+  color: var(--secondary-color-light);
+}
+
+.dark-mode nav a:hover {
+  color: var(--secondary-color-dark);
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.card {
+  background-color: var(--card-bg-light);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.dark-mode .card {
+  background-color: var(--card-bg-dark);
+  box-shadow: var(--box-shadow-dark);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+}
